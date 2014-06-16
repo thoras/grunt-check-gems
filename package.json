@@ -1,0 +1,27 @@
+{
+  "name": "grunt-check-gems",
+  "version": "0.0.1",
+  "description": "Grunt plugin for checking that all gem dependencies for Ruby specified in Gemfiles are installed and up-to-date.",
+  "homepage": "https://github.com/thoras/grunt-check-gems",
+  "repository": "git://github.com/thoras/grunt-check-gems.git",
+  "author": {
+    "name": "TR",
+    "email": "hello@thoras.net",
+    "url": "http://thoras.net/"
+  },
+  "keywords": [
+    "gruntplugin",
+    "gem",
+    "bundler"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "load-grunt-tasks": "~0.3.0",
+    "shelljs": "^0.3.0"
+  }
+}
