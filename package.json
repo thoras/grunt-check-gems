@@ -1,6 +1,6 @@
 {
   "name": "grunt-check-gems",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Grunt plugin for checking that all gem dependencies for Ruby specified in Gemfiles are installed and up-to-date.",
   "homepage": "https://github.com/thoras/grunt-check-gems",
   "repository": "git://github.com/thoras/grunt-check-gems.git",
