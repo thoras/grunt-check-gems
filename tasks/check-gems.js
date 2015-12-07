@@ -8,9 +8,11 @@
 
 'use strict';
 
+var shell = require('shelljs');
+var path = require('path');
+
 module.exports = function(grunt) {
 
-  var shell = require('shelljs');
   var src;
   var gemfile;
   var result;
@@ -42,13 +44,20 @@ module.exports = function(grunt) {
       }
 
       src.forEach(function(filepath) {
-        gemfile = (grunt.file.isPathAbsolute(filepath) ? filepath : process.cwd() + '/' + filepath) + '/' + options.gemfile;
+
+        gemfile = path.join(
+          grunt.file.isPathAbsolute(filepath) ? filepath : path.join(process.cwd(), filepath),
+          options.gemfile
+        );
+
         result = shell.exec('bundle check --gemfile=' + gemfile, {
           silent: true
         });
+
         if (result.code !== 0) {
           grunt.fatal('Can\'t satisfy your dependencies in "' + gemfile + '". Please head over there and install missing gems with `bundle install`.');
         }
+
       });
 
       grunt.log.ok('All Gemfile dependencies are satisfied.');
